@@ -21,7 +21,7 @@ class aloM0dClient : ClientModInitializer {
 
         openGuiKey = KeyMappingHelper.registerKeyMapping(
             KeyMapping(
-                "key.aloM0d.open_gui",
+                "key.alom0d.open_gui",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
                 KeyMapping.Category.MISC

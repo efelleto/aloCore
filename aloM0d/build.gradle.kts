@@ -29,7 +29,7 @@ loom {
     splitEnvironmentSourceSets()
 
     mods {
-        register("aloM0d") {
+        register("alom0d") {
             sourceSet("main")
             sourceSet("client")
         }

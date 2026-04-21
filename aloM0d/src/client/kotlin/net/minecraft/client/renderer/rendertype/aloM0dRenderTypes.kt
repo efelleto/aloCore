@@ -11,7 +11,7 @@ import com.mojang.blaze3d.vertex.VertexFormat
 
 object aloM0dRenderTypes {
     private val DEBUG_LINES_THROUGH_BLOCKS_PIPELINE = RenderPipeline.builder()
-        .withLocation("pipeline/aloM0d_debug_lines_through_blocks")
+        .withLocation("pipeline/alom0d_debug_lines_through_blocks")
         .withUniform("DynamicTransforms", UniformType.UNIFORM_BUFFER)
         .withUniform("Projection", UniformType.UNIFORM_BUFFER)
         .withUniform("Fog", UniformType.UNIFORM_BUFFER)
@@ -25,7 +25,7 @@ object aloM0dRenderTypes {
         .build()
 
     private val debugLinesThroughBlocks = RenderType.create(
-        "aloM0d_debug_lines_through_blocks",
+        "alom0d_debug_lines_through_blocks",
         RenderSetup.builder(DEBUG_LINES_THROUGH_BLOCKS_PIPELINE)
             .setLayeringTransform(LayeringTransform.VIEW_OFFSET_Z_LAYERING)
             .setOutputTarget(OutputTarget.ITEM_ENTITY_TARGET)

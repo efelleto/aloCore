@@ -3,6 +3,7 @@ package kpp.dev.aloM0d.client.gui
 import kpp.dev.aloM0d.client.core.module.Module
 import kpp.dev.aloM0d.client.core.module.ModuleCategory
 import kpp.dev.aloM0d.client.core.module.ModuleManager
+import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.gui.GuiGraphicsExtractor
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.input.KeyEvent
@@ -10,7 +11,19 @@ import net.minecraft.client.input.MouseButtonEvent
 import net.minecraft.network.chat.Component
 import org.lwjgl.glfw.GLFW
 
-class ClickGuiScreen : Screen(Component.literal("aloM0d")) {
+private const val MOD_ID = "alom0d"
+private const val DISPLAY_NAME = "aloM0d"
+
+private val guiTitle: String by lazy {
+    val version = FabricLoader.getInstance()
+        .getModContainer(MOD_ID)
+        .map { mod -> mod.metadata.version.friendlyString }
+        .orElse("unknown")
+
+    "$DISPLAY_NAME v$version"
+}
+
+class ClickGuiScreen : Screen(Component.literal(guiTitle)) {
     private var draggingCategory: ModuleCategory? = null
     private var dragOffsetX = 0
     private var dragOffsetY = 0
@@ -33,7 +46,7 @@ class ClickGuiScreen : Screen(Component.literal("aloM0d")) {
 
     override fun extractRenderState(graphics: GuiGraphicsExtractor, mouseX: Int, mouseY: Int, partialTick: Float) {
         graphics.fill(0, 0, width, height, COLOR_OVERLAY)
-        graphics.text(font, "aloM0d", OUTER_MARGIN, 8, COLOR_TEXT)
+        graphics.text(font, guiTitle, OUTER_MARGIN, 8, COLOR_TEXT)
 
         layoutPanels().forEach { panel ->
             renderPanel(graphics, panel, mouseX, mouseY)
