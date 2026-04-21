@@ -1,0 +1,8 @@
+name: aloAFK
+version: '${version}'
+main: com.github.efelleto.aloAFK.AloAFK
+api-version: '1.21'
+commands:
+  afk:
+    description: Entra ou sai do modo AFK
+    usage: /afk [list]

@@ -1,0 +1,13 @@
+.gradle/
+build/
+.idea/
+*.class
+out/
+.claude/
+.kotlin/
+# Ignora pastas de build e gradle de todos os subdiretórios
+**/build/
+**/.gradle/
+**/.idea/
+**/*.class
+**/out/

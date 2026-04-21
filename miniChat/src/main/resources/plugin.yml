@@ -1,0 +1,11 @@
+name: miniChat
+version: '${version}'
+main: com.github.efelleto.miniChat.MiniChat
+api-version: '1.21'
+commands:
+  cor:
+    description: Define a cor do seu nome no chat
+    usage: /cor [valor] [valor2]
+  minichat:
+    description: Comandos do miniChat
+    usage: /minichat <emojis>
