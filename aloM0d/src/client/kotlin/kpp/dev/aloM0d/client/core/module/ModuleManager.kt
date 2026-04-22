@@ -2,6 +2,7 @@ package kpp.dev.aloM0d.client.core.module
 
 import kpp.dev.aloM0d.client.core.event.ClientTickEvent
 import kpp.dev.aloM0d.client.core.event.EventBus
+import kpp.dev.aloM0d.client.core.module.modules.AutoMlgModule
 import kpp.dev.aloM0d.client.core.module.modules.AutoToolModule
 import kpp.dev.aloM0d.client.core.module.modules.BreakHolderModule
 import kpp.dev.aloM0d.client.core.module.modules.DebugModule
@@ -22,6 +23,7 @@ object ModuleManager {
         register(DebugModule)
         register(AutoToolModule)
         register(BreakHolderModule)
+        register(AutoMlgModule)
         register(VeinMinerModule)
 
         EventBus.subscribe(ClientTickEvent::class) { event ->
